@@ -1,0 +1,73 @@
+{% extends 'store/main.html' %} 
+{% load static %}
+{% block content %}
+    <div style="display: flex; margin-top: 40px;">
+        <div>
+            <div style="width: 500px; margin-left: 50px;">
+                <h6 style="font-size: 37px; font-family: 'EB Garamond', serif;">The art is to find the extraordinary in the ordinary and the ordinary in the extraordinary.</h6>
+            </div>
+            <div>
+                <p style="margin-left: 350px; margin-top: 50px; font-family: 'EB Garamond', serif; font-size: 24px;"> - Denis Diderot</p>
+            </div>
+        </div>
+
+        <div>
+            <div>
+                <img src="{% static  'images/red.jpeg' %}" style="margin-left: 50px; margin-top: 240px;" height="25" width="780">
+            </div>
+            <div style="margin-left: 50px; width: 800px; margin-top: 30px;">
+                <p style="font-family: 'Playfair Display', serif; font-family: 'Dosis', sans-serif; font-size: 25px;">The story of opening the gallery began when we started going to different exhibitions after different artists started coming to our schools and sharing their experiences with us. The art they showed us became an example that you can do wonders with just one brush. So we decided to look for similar artists, both famous and not. We started to create a selection of paintings and that's how we decided to open the gallery. Every painting has a story and a meaning. And we would like to bring this art into your lives.</p>
+            </div>
+        </div>
+        
+        
+    </div>
+<br>
+<div style="display: flex;">
+    <div class="card">
+            <img src="{% static  'images/gal1.jpeg' %}" alt="1" class="one">
+            <img src="{% static  'images/gal2.jpeg' %}" alt="2" class="two">
+            <img src="{% static  'images/gal3.jpeg' %}" alt="3" class="three">
+            <img src="{% static  'images/gal4.jpeg' %}" alt="4" class="four">
+    </div>
+    <div><div style="margin-left: 100px; margin-top: 40px;">
+        <figure class="quote" style="width: 400px; font-family: 'Quicksand', sans-serif;">
+            <blockquote style="font-size: 18px; color: red;">
+                Make it <em>easy</em> and don't make it <em>hard</em>, 
+                <br>
+                Make it <strong>happy</strong> and don't make it <strong>sad</strong>.
+            </blockquote>
+            <figcaption style="font-size: 20px;">
+            &mdash; Ulan Toleubaev</figcaption>
+      </figure></div>
+
+      <div style="margin-left: 260px; margin-top: 50px;">
+        <figure class="quote" style="width: 400px; font-family: 'Quicksand', sans-serif;">
+            <blockquote style="font-size: 15px; color: blue;">
+                Life is always a <em>choice</em>. Some things we regret, some things we are proud of. Something will haunt us <strong>forever</strong>. We are what we choose to be. 
+            </blockquote>
+            <figcaption style="font-size: 20px;">
+            &mdash; Aksaule Yerkinova</figcaption>
+      </figure></div>
+
+      <div style="margin-left: 420px; margin-top: 70px;">
+        <figure class="quote" style="width: 400px; font-family: 'Quicksand', sans-serif;">
+            <blockquote style="font-size: 17px; color: green;">
+                Don't envy those who are <em>strong</em> and <em>rich</em>,
+                <br>
+                Dawn is <strong>always</strong> followed by sunset.
+            </blockquote>
+            <figcaption style="font-size: 20px;">
+            &mdash; Iliyas Baiguziyev</figcaption>
+      </figure></div>
+
+      <div style="margin-left: 580px; margin-top: 90px;">
+        <figure class="quote" style="width: 400px; font-family: 'Quicksand', sans-serif;">
+            <blockquote style="font-size: 30px; color: rgb(218, 165, 32);">
+                Think outside the box.
+            </blockquote>
+            <figcaption style="font-size: 20px;">
+            &mdash; Alisher Zhaukimbekov</figcaption>
+      </figure></div></div>
+</div>    
+{% endblock content %}

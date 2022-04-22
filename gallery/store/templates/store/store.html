@@ -1,0 +1,46 @@
+{% extends 'store/main.html' %} {% load static %} {% block content %}
+<div>
+    <img src="{% static  'images/avatar.jpg' %}" width="950px" style="margin-left: 250px; margin-top: -10px;">
+</div>
+
+<br>
+
+<div style="display: flex; margin-left: 80px; margin-top: 20px;">
+    <div><img src="{% static  'images/1.jpg' %}" width="350px" style="padding: 20px; margin-left: 70px;"></div>
+    <div><img src="{% static  'images/2.jpg' %}" width="350px" style="padding: 20px; margin-left: 15px;"></div>
+    <div><img src="{% static  'images/3.jpg' %}" width="350px" style="padding: 20px; margin-left: 40px;"></div>
+</div>
+<div style="display: flex; margin-left: 70px; margin-top: 10px;">
+    <div style="margin-left: 100px;">
+        <h4 style="font-family: 'Quicksand', sans-serif;">Christopher Myers:</h4>
+        <h4 style="font-family: 'Quicksand', sans-serif;">I Dare Not Appear</h4>
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 10px;">Frieze No:9 Cork Street</p>
+        <p style="font-family: 'Raleway', sans-serif;">26 October - 3 November 2022</p>
+    </div>
+    <div style="margin-left: 150px; margin-top: 20px;">
+        <h4 style="font-family: 'Quicksand', sans-serif;">A TRAVES</h4>
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 10px;">Gallery Exhibition At 52 Walker St</p>
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 10px;">22 May - 25 May 2022</p>
+    </div>
+    <div style="margin-left: 150px;">
+        <h4 style="font-family: 'Quicksand', sans-serif;">NXTHVN 2021-2022 Studio</h4>
+        <h4 style="font-family: 'Quicksand', sans-serif;">Fellows: Un/Common Proximity</h4>
+        <p style=" font-family: 'Raleway', sans-serif; margin-top: 10px;">Gallery Exhibition At 48 Walker St</p>
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 10px;">25 August - 26 August 2022</p>
+    </div>
+</div>
+<hr>
+<h2 style="margin-left: 30px; font-family: 'Plus Jakarta Sans', sans-serif;">Comments</h2>
+{% if not post%} 
+    <h5 style="margin-left: 30px; font-family: 'Quicksand', sans-serif;">No Comments...</h5><br><a href="#" style="margin-left: 30px; font-family: 'Quicksand', sans-serif;">Add Comments...</a>
+{% else %}
+    {% for comment in post %}
+    <br>
+        <strong style="margin-left: 30px; font-size: 15px; font-family: 'Quicksand', sans-serif;">{{ comment.name }} - {{ comment.date_added }}</strong>
+        <br>
+        <p style="margin-left: 30px; margin-top: 5px; font-family: 'Quicksand', sans-serif;">{{ comment.body }}</p>
+    {% endfor %}
+{% endif %}
+<!-- <a href="" style="margin-left: 30px; font-family: 'Quicksand', sans-serif;">Add Comment</a> --> 
+<br>
+{% endblock content %}

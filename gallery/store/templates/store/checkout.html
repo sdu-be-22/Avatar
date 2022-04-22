@@ -1,0 +1,198 @@
+{% extends 'store/main.html' %} 
+{% load static %}
+{% block content %}
+<div style="display: flex; margin-left: 80px; margin-top: 20px;">
+    <div><img src="{% static  'images/1.jpg' %}" width="350px" style="padding: 20px; margin-left: 70px;"></div>
+    <div><img src="{% static  'images/2.jpg' %}" width="350px" style="padding: 20px; margin-left: 15px;"></div>
+    <div><img src="{% static  'images/3.jpg' %}" width="350px" style="padding: 20px; margin-left: 40px;"></div>
+</div>
+<div style="display: flex; margin-left: 70px; margin-top: 10px;">
+    <div style="margin-left: 100px;">
+        <h4 style="font-family: 'Quicksand', sans-serif;">Christopher Myers:</h4>
+        <h4 style="font-family: 'Quicksand', sans-serif;">I Dare Not Appear</h4>
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 10px;">Frieze No:9 Cork Street</p>
+        <p style="font-family: 'Raleway', sans-serif;">26 October - 3 November 2022</p>
+    </div>
+    <div style="margin-left: 150px; margin-top: 20px;">
+        <h4 style="font-family: 'Quicksand', sans-serif;">A TRAVES</h4>
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 10px;">Gallery Exhibition At 52 Walker St</p>
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 10px;">22 May - 25 May 2022</p>
+    </div>
+    <div style="margin-left: 150px;">
+        <h4 style="font-family: 'Quicksand', sans-serif;">NXTHVN 2021-2022 Studio</h4>
+        <h4 style="font-family: 'Quicksand', sans-serif;">Fellows: Un/Common Proximity</h4>
+        <p style=" font-family: 'Raleway', sans-serif; margin-top: 10px;">Gallery Exhibition At 48 Walker St</p>
+        <p style="font-family: 'Raleway', sans-serif; margin-top: 10px;">25 August - 26 August 2022</p>
+    </div>
+</div>
+<hr>
+<br>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="box-element" id="form-wrapper">
+            <form id="form">
+                <div id="user-info" style="margin-right: 30px; margin-left: 50px;">
+                    <div class="form-field" style="margin-bottom: 10px;">
+                        <input required class="form-control" type="text" name="name" placeholder="Name.." style="margin-top: 65px;">
+                    </div>
+                    <div class="form-field">
+                        <input required class="form-control" type="email" name="email" placeholder="Email..">
+                    </div>
+                </div>
+
+                <div id="shipping-info" style="margin-left: 50px;">
+                    <hr style="margin-left: 80px; width: 155px;">
+                    <p style=" margin-left: 80px; font-family: 'DM Sans', sans-serif;">Shipping Information:</p>
+                    <hr style="margin-left: 80px; width: 155px;">
+                    <div class="form-field" style="margin-bottom: 10px;">
+                        <input class="form-control" type="text" name="address" placeholder="Address.." style="margin-left: 30px;">
+                    </div>
+                    <div class="form-field" style="margin-bottom: 10px;">
+                        <input class="form-control" type="text" name="city" placeholder="City.." style="margin-left: 30px;">
+                    </div>
+                    <div class="form-field" style="margin-bottom: 10px;">
+                        <input class="form-control" type="text" name="state" placeholder="State.." style="margin-left: 30px;">
+                    </div>
+                    <div class="form-field" style="margin-bottom: 10px;">
+                        <input class="form-control" type="text" name="zipcode" placeholder="Zip code.." style="margin-left: 30px;">
+                    </div>
+                </div>
+                <hr>
+                <input id="form-button" class="btn btn-danger btn-block" type="submit" value="Continue">
+            </form>
+        </div>
+        <br>
+        <div class="box-element hidden" id="payment-info">
+            <small style="margin-left: 50px;">Paypal Options</small>
+            <div id="paypal-button-container" style="margin-top: 10px;"></div>
+            <!-- <button id="make-payment">Make Payment</button> -->
+        </div>
+    </div>
+
+    <div class="col-lg-6">
+        <div class="box-element">
+            <a class="btn btn-outline-dark" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+            <hr>
+            <h3 style="font-family: 'DM Sans', sans-serif;">Order Summary</h3>
+            <hr> {% for item in items %}
+            <div class="cart-row">
+                <div style="flex:2; font-family: 'Poiret One', cursive; font-size: 18px;"><img class="row-image" src="{{item.product.imageURL}}" width="160px"></div>
+                <div style="flex:2; font-family: 'Poiret One', cursive; font-size: 18px;"><p style="margin-top: 10px; font-family: 'Poiret One', cursive; font-size: 21px;">{{item.product.name}}</p></div>
+                <div></div>
+                <div style="flex:1; font-family: 'Poiret One', cursive; font-size: 18px;"><p>${{item.product.price}}</p></div>
+                <div style="flex:1; font-family: 'Poiret One', cursive; font-size: 18px;"><p>x{{item.quantity}}</p></div>
+            </div>
+            {% endfor %}
+            <h5 style="font-family: 'DM Sans', sans-serif;">Items: {{order.get_cart_items}}</h5>
+            <h5 style="font-family: 'DM Sans', sans-serif;">Total: ${{order.get_cart_total}}</h5>
+        </div>
+    </div>
+</div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD&disable-funding=credit"></script>
+
+<script>
+    var total = '{{order.get_cart_total}}'
+
+    paypal.Buttons({
+
+        createOrder: function(data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: parseFloat(total).toFixed(2)
+                    }
+                }]
+            });
+        },
+
+        onApprove: function(data, actions) {
+            return actions.order.capture().then(function(details) {
+                submitFormData()
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
+
+<script type="text/javascript">
+    var shipping = '{{order.shipping}}'
+    var total = '{{order.get_cart_total}}'
+
+    if(shipping == 'False') {
+        document.getElementById('shipping-info').innerHTML = ''
+    }
+
+    if (user != 'AnonymousUser') {
+        document.getElementById('user-info').innerHTML = ''
+    }
+
+    if (shipping == 'False' && user != 'AnonymousUser') {
+        document.getElementById('form-wrapper').classList.add("hidden");
+        document.getElementById('payment-info').classList.remove("hidden");
+    }
+
+    var form = document.getElementById('form')
+    form.addEventListener('submit', function(e){
+        e.preventDefault()
+        console.log('Form Submitted...')
+        document.getElementById('form-button').classList.add('hidden');
+        document.getElementById('payment-info').classList.remove('hidden');
+    })
+/*
+    document.getElementById('make-payment').addEventListener('click', function(e){
+        submitFormData()
+    })
+*/
+
+
+
+    function submitFormData(){
+        console.log('Payment button clicked')
+
+        var userFormData = {
+            'name': null,
+            'email': null,
+            'total': total,
+        }
+
+        var shippingInfo = {
+            'address': null,
+            'city': null,
+            'state': null,
+            'zipcode': null,
+        }
+
+        if (shipping != 'False') {
+            shippingInfo.address = form.address.value
+            shippingInfo.city = form.city.value
+            shippingInfo.state = form.state.value
+            shippingInfo.zipcode = form.zipcode.value
+        }
+
+        if (user == 'AnonymousUser') {
+            userFormData.name = form.name.value
+            userFormData.email = form.email.value
+        }
+
+        var url = '/process_order/'
+        fetch(url, {
+            method: 'POST',
+            headers:{
+                'Content_Type': 'application/json',
+                'X-CSRFToken': csrftoken,
+            },
+            body:JSON.stringify({'form': userFormData, 'shipping':shippingInfo})
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            console.log('Success:', data);
+            alert('Transaction completed');
+
+            cart = {}
+            document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+
+            window.location.href = "{% url 'store' %}"
+        })
+    }
+</script>
+{% endblock content %}

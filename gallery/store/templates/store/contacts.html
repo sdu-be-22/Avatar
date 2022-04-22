@@ -1,0 +1,19 @@
+{% extends 'store/main.html' %} 
+{% load static %}
+{% block content %}
+
+<div style="display: flex;">
+    <img src="{% static  'images/contactsimg.jpeg' %}" width="500px" height="400px" style="margin-left: 120px; margin-right: 200px; margin-top: 30px;">
+    <div>
+        
+        <form action="{% url 'contacts' %}" method="POST">
+            {% csrf_token %}  
+            <input name="name" type="text" placeholder="Name" style="font-size: 17px; font-family: 'Quicksand', sans-serif; margin-bottom: 20px; margin-top: -5px;">   
+            <input name="email" type="text" placeholder="Email" style="font-size: 17px; font-family: 'Quicksand', sans-serif; margin-bottom: 20px;">
+            <textarea name="message" placeholder="Message" style="font-size: 17px; font-family: 'Quicksand', sans-serif; margin-bottom: 20px;"></textarea>
+            <input type="submit" value="Send Message" style="font-size: 30px; font-family: 'Quicksand', sans-serif;">
+        </form>
+    </div>
+</div>
+
+{% endblock content %}

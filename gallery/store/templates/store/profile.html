@@ -1,0 +1,16 @@
+{% extends 'store/main.html' %} 
+{% load static %}
+{% block content %}
+<center>
+    <h1>how to create new user form</h1>
+    <h3>avatar team</h3>
+    <hr/>
+    <form method="POST">
+        {% csrf_token %}
+        <table border="1">
+            {{form}}
+        </table>
+        <input type="submit" value="create user">
+    </form>
+</center>
+{% endblock content %}
