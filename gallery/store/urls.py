@@ -14,4 +14,12 @@ urlpatterns = [
   
  	path('update_item/', views.updateItem, name="update_item"),
   	path('process_order/', views.processOrder, name="process_order"),
+
+#uTo-code
+	path('home/', views.home, name='home'),
+    path('profile/', views.profile, name='profile'),
+    path('login/', views.login_user, name='login'),
+    path('register/', views.register_user, name='register'),
+    path('logout/', views.logout_user, name='logout'),
+#/uTo-code
 ]

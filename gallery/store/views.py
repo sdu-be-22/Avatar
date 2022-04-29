@@ -11,6 +11,14 @@ from django.core.mail import send_mail,mail_admins, EmailMessage
 from django.conf import settings
 from django.template.loader import render_to_string
 
+#uTo-code-import
+from .forms import CreateUserForms, ProfileForm
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from .decorators import unauthenticated_user
+#uTo-code-import
+
 def store(request):
     data = cartData(request)
     
@@ -124,7 +132,69 @@ def processOrder(request):
             state = data['shipping']['state'],
             zipcode = data['shipping']['zipcode'],
         )
-    return JsonResponse('Payment complete', safe=False) 
+    return JsonResponse('Payment complete', safe=False)
+
+
+#uTo - code
+@login_required(login_url='home')
+def home(request):
+    return render(request, 'store/home.html')
+
+@login_required(login_url='profile')
+def profile(request):
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES, instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            username = request.user.username
+            messages.success(request, f'{username}, Your profile is updated.')
+            return redirect('/')
+    else:
+        form = ProfileForm(instance=request.user.profile)
+    context = {'form': form}
+    return render(request, 'store/profile.html', context)
+
+##@unauthenticated_user ne robit
+def login_user(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.info(request, f'{username}, You are logged in.')
+            return redirect("/")
+        else:
+            messages.info(request, 'Wrong password or username.')
+            return redirect('login')
+    return render(request, 'store/login_page.html')
+
+##@unauthenticated_user ne robit
+def register_user(request):
+    form = CreateUserForms()
+
+    if request.method == 'POST':
+        form = CreateUserForms(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.info(request, 'Account is created.')
+            return redirect('login')
+        else:
+            context = {'form': form}
+            messages.info(request, 'Invalid credentials.')
+            return render(request, 'store/register_page.html', context)
+
+    context = {'form': form}
+    return render(request, 'store/register_page.html', context)
+
+@login_required(login_url='login')
+def logout_user(request):
+    logout(request)
+    messages.info(request, 'You logged out successfully')
+    return redirect('login')
+#/uTo - code
  
 
 # class AddCommentView(CreateView):

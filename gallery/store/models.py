@@ -139,4 +139,22 @@ class Comment(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
-        return '%s - %s' % (self.post.username, self.name)    
+        return '%s - %s' % (self.post.username, self.name)
+
+#uTo-code
+class profile(models.Model):
+    user = models.OneToOneField(User, on_delete = models.CASCADE)
+
+    name = models.CharField(default = 'Name Surname', max_length = 200, null = True)
+
+    title = models.CharField(default = 'This is the default, title change it in profile.', max_length = 200, null = True)
+
+    desc_text = 'Hey, there this a default text description about you that you can change on after clicking on "Edit" or going'
+
+    desc  = models.CharField(default = desc_text, max_length = 200, null = True)
+
+    profile_img = models.ImageField(default = 'media/default.jpg', upload_to = 'media', null = True, blank = True)
+
+    def __str__(self):
+        return f"{self.user.username}'s profile"
+#/uTo-code
