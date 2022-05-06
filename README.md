@@ -32,7 +32,6 @@ Art originates from distant times. With the help of peoples, real masterpieces w
 This site can be used by anyone to find the picture of the soul
 
 ## Screenshots
-,,
 
 ## Data Base
 
