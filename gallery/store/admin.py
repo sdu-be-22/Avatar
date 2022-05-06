@@ -6,7 +6,7 @@ admin.site.register(Product)
 admin.site.register(Order)
 admin.site.register(OrderItem)
 admin.site.register(ShippingAddress)
-admin.site.register(Comment)
+# admin.site.register(Comment)
 #uTo-code
 admin.site.register(profile)
 #/uTo-code

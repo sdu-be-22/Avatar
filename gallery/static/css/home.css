@@ -1,4 +1,5 @@
-*, body {
+*,
+body {
     margin: 0;
     padding: 0;
     font-family: Nunito;
@@ -9,7 +10,7 @@ body {
 }
 
 header {
-    background-color:#8a5050;
+    background-color: #8a5050;
     height: 5em;
     display: flex;
     align-items: center;
@@ -40,14 +41,13 @@ header {
     margin: auto 0;
 }
 
-
 .profile-icon-link-container img {
     margin: auto .3em auto auto;
     width: 2.5em;
 }
 
 .profile-icon-link-container span {
-    margin: auto 0 .3em auto ;
+    margin: auto 0 .3em auto;
     text-decoration: none;
     color: white;
     font-size: 1.1em;
@@ -60,12 +60,12 @@ a {
 
 /* notification block */
 
-
 .notification-container {
     width: 100%;
     display: flex;
     justify-content: center;
 }
+
 .notification {
     padding: .8em 5%;
     background-color: rgba(64, 243, 243, 0.808);
@@ -79,6 +79,7 @@ a {
 #cross {
     cursor: pointer;
 }
+
 
 /* Main Container css */
 
@@ -98,7 +99,6 @@ a {
 }
 
 .profile-photo-container {
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,7 +113,7 @@ a {
     margin: .5em auto;
 }
 
-.user-content-container{
+.user-content-container {
     display: flex;
     flex-direction: column;
     margin: 2em;
@@ -144,7 +144,6 @@ a {
 .profile-edit-link-container {
     display: flex;
     justify-content: flex-end;
-    
 }
 
 .profile-edit-link-container a {
@@ -152,50 +151,41 @@ a {
     color: #1a0dab;
 }
 
-
 @media only screen and (max-width: 1200px) {
     .container {
         display: block;
     }
-
     .main-container {
         padding: 2em 1.5em;
     }
-
     .user-content-container {
         padding-left: 0;
     }
-
     .profile-photo-container {
         width: 100%;
     }
-  }
+}
 
-
-  @media only screen and (max-width: 700px) {
+@media only screen and (max-width: 700px) {
     .user-content-container {
         margin: 2em auto;
     }
-
     .user-title {
         width: 100%;
     }
-
     .main-container {
         margin: 10% auto;
         width: 75%;
     }
-
     .header-username {
         display: none;
     }
-
     .profile-photo-container {
         width: 100%;
     }
-  }
+}
 
-  @media only screen and (min-width: 1200px){
+@media only screen and (min-width: 1200px) {
     .user-content-container {
         width: 60%;
     }
@@ -203,8 +193,7 @@ a {
         margin: auto;
         width: 30%;
     }
-
     .container {
         font-size: 18px;
     }
-  }
+}

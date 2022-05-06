@@ -40,46 +40,37 @@
     font-weight: 600;
 }
 
-
-
 @media only screen and (max-width: 1200px) {
     .container {
         margin: 0 auto;
         width: 90%;
         border: none;
     }
-
     .signup-heading {
         margin: 1em auto;
         display: flex;
         justify-content: center;
     }
-
     .main-container {
         padding: 2em 0em;
-
     }
-  }
+}
 
-
-  @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .user-profile-form-container {
         margin: 2em auto;
     }
-
     .main-container {
         margin: 10% auto;
         width: 90%;
         padding-bottom: 0;
     }
-
     .container {
         margin: 0 auto;
         width: 90%;
         border: none;
     }
-
     .signup-heading {
         margin: 1em auto;
     }
-  }
+}

@@ -21,3 +21,5 @@ class ProfileForm(ModelForm):
         widgets = {
             'profile_img': FileInput(),
         }
+        
+#Customer.objects.create(User = request.user)

@@ -7,9 +7,9 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
-    
-    def __str__(self):
-        return self.name
+
+    def str(self):
+        return str(self.name)
     
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
@@ -132,14 +132,14 @@ class ShippingAddress(models.Model):
     def __str__(self):
         return self.address   
     
-class Comment(models.Model):
-    post = models.ForeignKey(User, related_name="comments", on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
-    body = models.TextField()
-    date_added = models.DateTimeField(auto_now_add=True)
+# class Comment(models.Model):
+#     post = models.ForeignKey(User, related_name="comments", on_delete=models.CASCADE)
+#     name = models.CharField(max_length=255)
+#     body = models.TextField()
+#     date_added = models.DateTimeField(auto_now_add=True)
     
-    def __str__(self):
-        return '%s - %s' % (self.post.username, self.name)
+#     def __str__(self):
+#         return '%s - %s' % (self.post.username, self.name)
 
 #uTo-code
 class profile(models.Model):

@@ -14,9 +14,11 @@ from django.template.loader import render_to_string
 #uTo-code-import
 from .forms import CreateUserForms, ProfileForm
 from django.contrib import messages
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .decorators import unauthenticated_user
+
 #uTo-code-import
 
 def store(request):
@@ -25,8 +27,9 @@ def store(request):
     cartItems = data['cartItems']
         
     products = Product.objects.all()
-    comments = Comment.objects.all()
-    context = {'products': products, 'cartItems':cartItems, 'post': comments}
+    # comments = Comment.objects.all()
+    context = {'products': products, 'cartItems':cartItems}
+    # context = {'products': products, 'cartItems':cartItems, 'post': comments}
     return render(request, 'store/store.html', context)
 
 def cart(request):
@@ -63,6 +66,7 @@ def collections(request):
 
 def contacts(request):
     if request.method == "POST":
+        name = request.POST['name']
         email = request.POST['email']
         message = request.POST['message']
         print(email + " " + message)
@@ -71,7 +75,7 @@ def contacts(request):
         #           email, 
         #           ['avatar.gallery@mail.ru'], 
         #           fail_silently=False)
-        mail_admins(email, 
+        mail_admins("Email Address: " + email + " From: " + name, 
                   message, 
                   fail_silently=False)
     return render(request, 'store/contacts.html')
@@ -104,6 +108,9 @@ def updateItem(request):
         orderItem.delete()
     
     return JsonResponse('Item was added', safe=False)
+
+def news(request):
+    return render(request, 'store/news.html')
 
 def processOrder(request):
     transaction_id = datetime.datetime.now().timestamp()
@@ -154,24 +161,26 @@ def profile(request):
     context = {'form': form}
     return render(request, 'store/profile.html', context)
 
-##@unauthenticated_user ne robit
-def login_user(request):
 
+def login_user(request):
+    
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
+        try:
+            user = User.objects.get(username=username)
+        except User.DoesNotExist:
+            user = None
         if user is not None:
             login(request, user)
             messages.info(request, f'{username}, You are logged in.')
             return redirect("/")
         else:
             messages.info(request, 'Wrong password or username.')
-            return redirect('login')
+            return redirect('login')   
     return render(request, 'store/login_page.html')
 
-##@unauthenticated_user ne robit
+
 def register_user(request):
     form = CreateUserForms()
 
@@ -180,6 +189,22 @@ def register_user(request):
         if form.is_valid():
             form.save()
             messages.info(request, 'Account is created.')
+
+
+            name = form.cleaned_data.get('name')
+            email = form.cleaned_data.get('email')
+
+            user = form.save(commit=True)
+            user.is_active = True
+            user.save()
+
+
+            profile = Customer()
+            profile.user = user
+            profile.name = name
+            profile.email = email
+            profile.save()
+
             return redirect('login')
         else:
             context = {'form': form}

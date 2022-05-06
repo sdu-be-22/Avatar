@@ -2,20 +2,182 @@
 {% load static %}
 {% block content %}
 
-<html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-
-    <title>Home</title>
+    <style>
+        .profile-icon-link-container {
+            display: flex;
+            align-items: center;
+            margin: auto 0;
+        }
+        
+        
+        .profile-icon-link-container img {
+            margin: auto 10px auto auto;
+            width: 2.5em;
+        }
+        
+        .profile-icon-link-container span {
+            margin: auto 0 10px auto ;
+            text-decoration: none;
+            color: white;
+            font-size: 1.1em;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        
+        .notification-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .notification {
+            padding: 10px 5%;
+            background-color: rgba(64, 243, 243, 0.808);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 60%;
+            border-radius: 5px;
+        }
+        
+        #cross {
+            cursor: pointer;
+        }
+        
+        .main-container {
+            width: 50%;
+            background: rgb(252,69,69);
+            background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(252,69,120,1) 100%);
+            margin: 3% auto;
+            border-radius: 2em;
+            padding: 2em 2em;
+        }
+        
+        .container {
+            display: flex;
+            margin: 2em 2em;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .profile-photo-container {
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .profile-photo-container img {
+            width: 10em;
+            height: 10em;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: .5em auto;
+        }
+        
+        .user-content-container{
+            display: flex;
+            flex-direction: column;
+            margin: 2em;
+            padding-left: 2em;
+        }
+        
+        .username {
+            color: white;
+            font-size: 2em;
+            font-weight: 600;
+            margin: 5px 0;
+        }
+        
+        .user-title {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: white;
+            margin: 5px 0;
+            width: 80%;
+            line-height: 1.3em
+        }
+        
+        .user-desc {
+            font-size: .9em;
+            color: white;
+            margin: 4px auto 4px 0;
+        }
+        
+        .profile-edit-link-container {
+            display: flex;
+            justify-content: flex-end;
+            
+        }
+        
+        .profile-edit-link-container a {
+            text-decoration: none;
+            color: white;
+        }
+        
+        
+        @media only screen and (max-width: 1200px) {
+            .container {
+                display: block;
+            }
+        
+            .main-container {
+                padding: 2em 1.5em;
+            }
+        
+            .user-content-container {
+                padding-left: 0;
+            }
+        
+            .profile-photo-container {
+                width: 100%;
+            }
+          }
+        
+        
+          @media only screen and (max-width: 700px) {
+            .user-content-container {
+                margin: 2em auto;
+            }
+        
+            .user-title {
+                width: 100%;
+            }
+        
+            .main-container {
+                margin: 10% auto;
+                width: 75%;
+            }
+        
+            .header-username {
+                display: none;
+                color: white;
+            }
+        
+            .profile-photo-container {
+                width: 100%;
+            }
+          }
+        
+          @media only screen and (min-width: 1200px){
+            .user-content-container {
+                width: 60%;
+            }
+            .profile-photo-container {
+                margin: auto;
+                width: 30%;
+            }
+        
+            .container {
+                font-size: 18px;
+            }
+          }
+    </style>
   </head>
-  <body>
+  <body style="background-color: white;" >
   <!--com
     <header>
         <nav class="navbar">
@@ -26,7 +188,7 @@
         </nav>
     </header>
  -->
-<!--4-video-->
+
   <!--
     {% if messages %}
     <div class="notification-container">
@@ -45,7 +207,7 @@
     </script>
   {% endif %}
   -->
-<!--end 4-video-->
+
 
     <main class="main-container">
         <div class="container">
@@ -56,7 +218,7 @@
 
             <div class="user-content-container">
                 <p class="username">{{user.profile.name}}</p>
-                <p class="user-title">{{user.profile.title}}</p>
+                <p class="user-title" style="font-size: 22px;">{{user.profile.title}}</p>
                 <p class="user-desc">{{user.profile.desc}}</p>
                 <div class="profile-edit-link-container">
                     <a href="{% url 'profile' %}">Edit</a>
@@ -65,6 +227,5 @@
         </div>
     </main>
   </body>
-</html>
 
 {% endblock content %}

@@ -1,27 +1,25 @@
-
 #note {
     position: absolute;
     z-index: 101;
     top: 0;
     left: 0;
     right: 0;
-    background: #fde073;
     text-align: center;
     line-height: 2.5;
-    overflow: hidden; 
+    overflow: hidden;
     -webkit-box-shadow: 0 0 5px black;
-    -moz-box-shadow:    0 0 5px black;
-    box-shadow:         0 0 5px black;
+    -moz-box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px black;
 }
 
-.profile-icon-link-container div{
+.profile-icon-link-container div {
     display: block;
-    background-color: #D51B1B;
-    padding: .3em .5em;
+    background: rgb(252, 69, 69);
+    background: linear-gradient(37deg, rgba(252, 69, 69, 1) 0%, rgba(252, 69, 120, 1) 100%);
+    padding: 10px 30px;
     border-radius: 2px;
     color: white;
 }
-
 
 .profile-page-heading {
     font-size: 2em;
@@ -32,7 +30,7 @@
     width: 50%;
 }
 
-.profile-photo-container button{
+.profile-photo-container button {
     margin-top: 1.5em;
     width: 70%;
     padding: .8em;
@@ -57,14 +55,13 @@
     cursor: pointer;
 }
 
-
 .user-profile-form-container {
     width: 60%;
     margin: 2em;
     padding: 0;
 }
 
-.user-content-container ul{
+.user-content-container ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
@@ -72,13 +69,11 @@
     justify-content: center;
 }
 
-.user-content-container ul  li {
+.user-content-container ul li {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
-
-
 
 .user-profile-form-container label {
     font-size: larger;
@@ -99,7 +94,6 @@
     margin-top: 1.5em;
     width: 40%;
     padding: .8em;
-    background-color: #FFD13A;
     border: none;
     border-radius: 5px;
     font-size: 1em;
@@ -107,6 +101,16 @@
     cursor: pointer;
 }
 
+.profile-logout-button {
+    margin-top: 1.5em;
+    width: 40%;
+    padding: .8em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+}
 
 @media only screen and (max-width: 1200px) {
     .container {
@@ -114,43 +118,34 @@
         margin-left: .1em;
         margin-right: .1em;
     }
-
     .main-container {
         padding: 2em 1.5em;
-
     }
-
     .user-profile-form-container {
         padding-left: 0;
         margin: 2em auto;
         width: 90%;
     }
-
     .profile-photo-container {
         width: 100%;
     }
-  }
+}
 
-
-  @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .user-profile-form-container {
         margin: 2em auto;
     }
-
     .user-title {
         width: 100%;
     }
-
     .main-container {
         margin: 10% auto;
         width: 80%;
     }
-
     .header-username {
         display: none;
     }
-
     .profile-photo-container {
         width: 100%;
     }
-  }
+}

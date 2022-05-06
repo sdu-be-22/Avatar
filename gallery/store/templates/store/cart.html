@@ -5,7 +5,10 @@
 <div class="row">
     <div class="col-lg-12">
         <div class="box-element">
-            <a class="btn btn-outline-dark" href="{% url 'store' %}" style="font-family: 'DM Sans', sans-serif; font-size: 18px;">&#x2190; Continue Shopping</a>
+            <a class="btn btn-outline-dark" href="{% url 'store' %}" style="font-family: 'DM Sans', sans-serif; font-size: 18px; background: #CF0000;
+            background: linear-gradient(to right, #CF0000 0%, #FF4D94 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;">&#x2190; Continue Shopping</a>
             <br>
             <br>
             <table class="table">
@@ -27,10 +30,22 @@
         <div class="box-element">
             <div class="cart-row">
                 <div style="flex:2"></div>
-                <div style="flex:2; font-family: 'DM Sans', sans-serif; font-size: 18px;"><strong>Item</strong></div>
-                <div style="flex:1; font-family: 'DM Sans', sans-serif; font-size: 18px;"><strong>Price</strong></div>
-                <div style="flex:1; font-family: 'DM Sans', sans-serif; font-size: 18px;"><strong>Quantity</strong></div>
-                <div style="flex:1; font-family: 'DM Sans', sans-serif; font-size: 18px;"><strong>Total</strong></div>
+                <div style="flex:2; font-family: 'DM Sans', sans-serif; font-size: 18px; background: #CF0000;
+                background: linear-gradient(to right, #CF0000 0%, #C170FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"><strong>Item</strong></div>
+                <div style="flex:1; font-family: 'DM Sans', sans-serif; font-size: 18px; background: #CF0000;
+                background: linear-gradient(to right, #CF0000 0%, #C170FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"><strong>Price</strong></div>
+                <div style="flex:1; font-family: 'DM Sans', sans-serif; font-size: 18px; background: #CF0000;
+                background: linear-gradient(to right, #CF0000 0%, #C170FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"><strong>Quantity</strong></div>
+                <div style="flex:1; font-family: 'DM Sans', sans-serif; font-size: 18px; background: #CF0000;
+                background: linear-gradient(to right, #CF0000 0%, #C170FF 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;"><strong>Total</strong></div>
             </div>
 
             {% for item in items %}

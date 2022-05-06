@@ -1,4 +1,6 @@
+{% extends 'store/main.html' %}
 {% load static %}
+{% block content %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,22 +11,18 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <link rel="stylesheet" href="{% static 'css/profile.css' %}">
     <link rel="stylesheet" href="{% static 'css/register.css' %}">
 
     <title>Regiser Page</title>
+    <style>
+      button {
+        background: rgb(252,69,69);
+        background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(252,69,120,1) 100%);
+      }
+  </style>
   </head>
   <body>
-
-    <header>
-        <nav class="navbar">
-            <a href="home.html" class="logo">Avatar</a>
-        </nav>
-    </header>
-
-
-   <!--4-video-->
   {% if messages %}
     <div class="notification-container">
         <div class="notification">
@@ -41,13 +39,11 @@
         })
     </script>
   {% endif %}
-<!--end 4-video-->
 
-
-  <main class="main-container">
+  <main class="main-container" style="font-family: 'Quicksand', sans-serif; margin-top: 0px;">
       <div class="container ">
-        <h1 class="signup-heading">Sign Up</h1>
-        <div class="user-content-container user-profile-form-container">
+        <h1 class="signup-heading" style="margin-left: 420px;">Sign Up</h1>
+        <div class="user-content-container user-profile-form-container" style="margin-left: 60px;">
           <form action="" method="POST">
               {% csrf_token %}
             <ul>
@@ -77,9 +73,9 @@
             
           </ul>
 
-          <button class="signup-button">Sign up</button>
+          <button class="signup-button" style="margin-left: 150px;">Sign up</button>
 
-          <p class="login-link">Have an account?? <a href="{% url 'login' %}">Log in</a></p>
+          <p class="login-link" style="margin-left: 186px;">Have an account?? <a href="{% url 'login' %}">Log in</a></p>
       </div>
       </div>
   </main>
@@ -101,3 +97,5 @@
 
 </body>
 </html>
+
+{% endblock content %}

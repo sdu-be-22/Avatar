@@ -151,9 +151,9 @@
             padding-bottom: 20px;
             padding-left: 50px;
             padding-right: 50px;
-            margin-top: 40px;
+            margin-top: 0px;
             font-family: 'Comfortaa', cursive;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
         }
         
         .footer-distributed .footer-left,
@@ -525,6 +525,76 @@
         .hidden {
             display: none!important;
         }
+
+        .services {
+            padding-bottom: 30px;
+        }
+        
+        .services h2 {
+            color: white;
+            margin-top: -40px;
+            font-family: 'Julius Sans One', sans-serif;
+        }
+        
+        .services .des-box {
+            width: 300px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            background: rgb(252,69,69);
+            background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(252,69,120,1) 100%);
+            box-shadow: 30px 0 30px 0 rgb(252,69,69);
+            transition: all 0.3s ease-in-out;
+            border-radius: 8px;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .services .des-box::before {
+            content: "";
+            position: absolute;
+            background: rgb(252,69,69);
+            background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(69,151,252,1) 100%);
+            right: 0;
+            left: 0;
+            bottom: 0;
+            top: 100%;
+            transition: all 0.4s;
+            z-index: -1;
+        }
+        
+        .services .des-box:hover::before {
+            background: rgb(252,69,69);
+            background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(69,151,252,1) 100%);
+            top: 0;
+            border-radius: 0px;
+        }
+        
+        .services .title {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 40px;
+        }
+        
+        .services .title a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Pacifico', serif;
+        }
+        
+        .services .description {
+            font-size: 15px;
+            line-height: 28px;
+            margin-bottom: 0;
+            font-weight: bolder;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .services .des-box:hover .title a,
+        .services .des-box:hover {
+            color: white;
+        }
     </style>
 
     <script type="text/javascript">
@@ -582,7 +652,7 @@
           <i class="fas fa-bars"></i>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNav" style="margin-left: -90px;">
             <ul class="navbar-nav">
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'about' %}" style="font-family: 'Poiret One', cursive; font-size: 18px;">About</a>
@@ -598,6 +668,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'contacts' %}" style="font-family: 'Poiret One', cursive; font-size: 18px;">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'news' %}" style="font-family: 'Poiret One', cursive; font-size: 18px;">News</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'home' %}" style="font-family: 'Poiret One', cursive; font-size: 18px;">Profile</a>
@@ -617,7 +690,8 @@
                 <a href="{% url 'store' %}">Home</a> ·
                 <a href="{% url 'about' %}">About</a> ·
                 <a href="{% url 'collections' %}">Collections</a> ·
-                <a href="{% url 'location' %}">Locations</a>
+                <a href="{% url 'location' %}">Locations</a> ·
+                <a href="{% url 'news' %}">News</a>
             </p>
             <p class="footer-company-name">Kaskelen &copy; 2022</p>
         </div>
@@ -640,9 +714,9 @@
 
         <div class="footer-right">
             <p class="footer-company-about">
-                <span>Contacts</span>
+                <span style="margin-top: 15px;">Contacts</span>
             </p>
-            <div class="footer-icons">
+            <div class="footer-icons" style="margin-top: -5px;">
                 <a href="#"><i class="fa fa-facebook"></i></a>
                 <a href="#"><i class="fa fa-twitter"></i></a>
                 <a href="#"><i class="fa fa-linkedin"></i></a>
