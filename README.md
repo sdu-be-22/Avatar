@@ -32,22 +32,7 @@ Art originates from distant times. With the help of peoples, real masterpieces w
 This site can be used by anyone to find the picture of the soul
 
 ## Screenshots
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/1.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/2.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/3.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/4.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/5.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/6.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/7.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/8.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/9.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/10.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/11.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/12.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/13.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/14.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/15.png)
-![](https://github.com/sdu-be-22/Avatar/blob/master/Screen/16.png)
+
 ## Presentation
 ![Presentation](https://www.canva.com/design/DAE_5qKZ4_I/qrb-koGTZBqWFGZm0eCGAg/view?utm_content=DAE_5qKZ4_I&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
 
