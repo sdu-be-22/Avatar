@@ -34,5 +34,5 @@ This site can be used by anyone to find the picture of the soul
 ## Screenshots
 
 ## Presentation
-![Presentation](https://www.canva.com/design/DAFBA2wkHJ8/59VX9Nv_Goq_mDg5WTSOQg/view?utm_content=DAFBA2wkHJ8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton#1)
+![Presentation][(https://www.canva.com/design/DAFBA2wkHJ8/59VX9Nv_Goq_mDg5WTSOQg/view?utm_content=DAFBA2wkHJ8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton#1)]
 
