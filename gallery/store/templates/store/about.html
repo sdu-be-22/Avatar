@@ -1,6 +1,70 @@
 {% extends 'store/main.html' %} 
 {% load static %}
 {% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+<link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#7952b3">
+
+
+    <style>
+    .round {
+        width: 230px;
+        height: 190px;
+        border-radius: 170px;
+        border: 3px solid #DC143C;
+        box-shadow: 0 0 7px #666; 
+    }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#7952b3">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#7952b3">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
     <div style="display: flex; margin-top: 40px;">
         <div>
             <div style="width: 500px; margin-left: 50px;">
@@ -69,5 +133,187 @@
             <figcaption style="font-size: 20px;">
             &mdash; Alisher Zhaukimbekov</figcaption>
       </figure></div></div>
-</div>    
+</div>  
+<main class="container">
+    <div class="row mb-2">
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary" style="font-family: 'Pacifico', cursive; font-size: 20px; background: #CF0000;
+                    background: linear-gradient(to right, #CF0000 0%, #C170FF 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;">Kazakhstan</strong>
+                    <h3 class="mb-0" style="font-family: 'Zilla Slab', serif;">Parman Asanov's solo exhibition Marginalia</h3>
+                    <div class="mb-1 text-muted">April 12</div>
+                    <p class="card-text mb-auto" style="font-family: 'Poppins', sans-serif;">The exhibition 'Marginalia' opened at a gallery in the capital city. This is Parman Asanov's first solo exhibition.</p>
+                    <br>
+                    <a href="{% url 'news' %}" class="stretched-link" style="font-family: 'Montserrat', sans-serif; text-decoration: none;">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <img src="{% static  'images/3new.jpeg' %}" width="200" height="250">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                <div class="col p-4 d-flex flex-column position-static">
+                    <strong class="d-inline-block mb-2 text-primary" style="font-family: 'Pacifico', cursive; font-size: 20px; background: #CF0000;
+                    background: linear-gradient(to right, #CF0000 0%, #C170FF 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;">Kazakhstan</strong>
+                    <h3 class="mb-0" style="font-family: 'Zilla Slab', serif;">Daria Kasteeva's solo exhibition Melody of Spring</h3>
+                    <div class="mb-1 text-muted">March 11</div>
+                    <p class="card-text mb-auto" style="font-family: 'Poppins', sans-serif;">Daria Kasteeva's personal exhibition "Melody of Spring" opened at the gallery of the National University of Arts in Astana</p>
+                    <br>
+                    <a href="{% url 'news' %}" class="stretched-link" style="font-family: 'Montserrat', sans-serif; text-decoration: none;">Continue reading</a>
+                </div>
+                <div class="col-auto d-none d-lg-block">
+                    <!-- <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg> -->
+                    <img src="{% static  'images/7new.jpeg' %}" width="200" height="250">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-5">
+        <div class="col-md-8">
+            <h3 class="pb-4 mb-4 border-bottom text-primary" style="font-family: 'Montserrat', cursive; font-size: 30px; background: #121FCF;
+            background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;">
+                For Our Clients❤️
+            </h3>
+
+            <article class="blog-post">
+                <h2 class="blog-post-title" style="font-family: 'Poppins', sans-serif;">More Information</h2>
+                <p class="blog-post-meta" style="font-family: 'Poppins', sans-serif;">April 25, 2022 by <a href="#" style="text-decoration: none;">Someone</a></p>
+
+                <p style="font-family: 'Poppins', sans-serif;">Every month we will put on an exhibition of paintings by a different artist.</p>
+                <hr>
+                <section id="services" class="services">
+                    <div class="container">
+                        <div class="section-title">
+                            <h2 class="text-center pt-5">Statistics</h2>
+                        </div>
+                        <div class="row">
+                            <div class="row" style="font-family: 'Quicksand', sans-serif;">
+                                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                                    <div class="des-box">
+                                        <h1 class="title" style="color: white;font-family: 'Quicksand', sans-serif;">1000</h1>
+                                        <p class="description" style="color: white;font-family: 'Quicksand', sans-serif;">Sold Paintings</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="font-family: 'Quicksand', sans-serif;">
+                                    <div class="des-box">
+                                        <h1 class="title" style="color: white;font-family: 'Quicksand', sans-serif;">3</h1>
+                                        <p class="description" style="font-family: 'Quicksand', sans-serif;">Locations</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" style="font-family: 'Quicksand', sans-serif;">
+                                    <div class="des-box">
+                                        <h1 class="title" style="color: white;font-family: 'Quicksand', sans-serif;">5</h1>
+                                        <p class="description" style="font-family: 'Quicksand', sans-serif;">Years Of Work</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+                                    <div class="des-box">
+                                        <h1 class="title" style="color: white;font-family: 'Quicksand', sans-serif;">50</h1>
+                                        <p class="description" style="font-family: 'Quicksand', sans-serif;">Workers</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+        </div>
+
+        <div class="col-md-4 " style="font-family: 'Quicksand', sans-serif;">
+            <div class="position-sticky " style="top: 2rem; ">
+                <div class="p-4 mb-3 bg-sunset rounded " style="color: black; background: rgb(252,69,69);
+                background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(252,69,120,1) 100%);">
+                    <h4 class="fst" style="color:white;">Contact</h4>
+                    <p class="mb-0" style="color:white;">If you have any questions about a case, please call +7 705 397 59 95 or email avatar.gallery@mail.ru. We will try to respond as soon as possible.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main> 
+
+    <div class="container marketing" style="margin-top: 30px; font-family: 'Quicksand', sans-serif;">
+      <div class="row">
+        <div class="col-lg-4">
+            <img src="{% static  'images/fredrik-solli-wandem-KjqnyfngG50-unsplash.jpeg' %}" alt="" class="round">
+          <h2 style="margin-top: 20px;">Staff</h2>
+          <p>Full list of our gallery staff</p>
+          <p><a class="btn btn-secondary" href="#" style="background: rgb(252,69,69);
+            background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(252,69,120,1) 100%); color: white;">Show List &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+            <img src="{% static  'images/annie-spratt-hWJsOnaWTqs-unsplash.jpeg' %}" alt="" class="round">
+  
+          <h2 style="margin-top: 20px;">News</h2>
+          <p>Art and painting news page </p>
+          <p><a class="btn btn-secondary" href="{% url 'news' %}" style="background: rgb(252,69,69);
+            background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(252,69,120,1) 100%); color: white;">More &raquo;</a></p>
+        </div>
+        <div class="col-lg-4">
+            <img src="{% static  'images/yannis-papanastasopoulos-kKzbyDeb62M-unsplash.jpeg' %}" alt="" class="round">
+  
+          <h2 style="margin-top: 20px;">Store</h2>
+          <p>A place where you can see and buy</p>
+          <p><a class="btn btn-secondary" href="{% url 'collections' %}" style="background: rgb(252,69,69);
+            background: linear-gradient(37deg, rgba(252,69,69,1) 0%, rgba(252,69,120,1) 100%); color: white;">Collections &raquo;</a></p>
+        </div>
+      </div>
+  
+  
+      <hr class="featurette-divider">
+  
+      <div class="row featurette" style="margin-top: 10px; font-family: 'Poppins', sans-serif;">
+        <div class="col-md-7">
+          <h2 class="featurette-heading" style="font-family: 'Montserrat', cursive; font-size: 30px; background: #121FCF;
+          background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; margin-top: 60px;">Bringing <span class="text-muted">everything</span> together</h2>
+          <p class="lead" style="font-family: 'Quicksand', sans-serif;">
+            Since 2017, Avatar has been building technology to improve the art world. With complete website and database integration, CRM and built-in sales management tools, we offer the world’s most advanced art platform for everyone - from small to large galleries, artists who are just starting out to establish studios, and collectors of every type and size.</p>
+        </div>
+        <div class="col-md-5">
+            <img src="{% static  'images/ab1.jpeg' %}" width=400 height=400;>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      <div class="row featurette" style="margin-top: 10px; font-family: 'Poppins', sans-serif;">
+        <div class="col-md-7 order-md-2">
+          <h2 class="featurette-heading" style="font-family: 'Montserrat', cursive; font-size: 30px; background: #121FCF;
+          background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; margin-top: 110px;">Oh yeah, it’s that good. <span class="text-muted">See for yourself.</span></h2>
+          <p class="lead" style="font-family: 'Quicksand', sans-serif;">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
+        </div>
+        <div class="col-md-5 order-md-1">
+            <img src="{% static  'images/ab2.jpeg' %}" width=400 height=400;>
+        </div>
+      </div>
+  
+      <hr class="featurette-divider">
+  
+      <div class="row featurette" style="margin-top: 10px; font-family: 'Poppins', sans-serif;">
+        <div class="col-md-7">
+          <h2 class="featurette-heading" style="font-family: 'Montserrat', cursive; font-size: 30px; background: #121FCF;
+          background: linear-gradient(to right, #121FCF 0%, #CF1512 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent; margin-top: 100px;">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
+          <p class="lead" style="font-family: 'Quicksand', sans-serif;">And yes, this is the last block of representative placeholder content. Again, not really intended to be actually read, simply here to give you a better view of what this would look like with some actual content. Your content.</p>
+        </div>
+        <div class="col-md-5">
+            <img src="{% static  'images/ab3.jpeg' %}" width=400 height=400;>
+        </div>
+      </div>
+      <script src="/docs/5.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<body> 
 {% endblock content %}
