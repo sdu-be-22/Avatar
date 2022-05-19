@@ -11,7 +11,15 @@ urlpatterns = [
 	path('contacts/', views.contacts, name="contacts"),
  	path('about/', views.about, name="about"),
   
-  
  	path('update_item/', views.updateItem, name="update_item"),
   	path('process_order/', views.processOrder, name="process_order"),
+   
+	#uto 
+ 
+   	path('profile/', views.profile, name='profile'),
+    path('login/', views.login_user, name='login'),
+    path('register/', views.register_user, name='register'),
+    path('logout/', views.logout_user, name='logout'),
+    
+    #/uto
 ]
