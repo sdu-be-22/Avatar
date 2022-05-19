@@ -48,6 +48,11 @@ This site can be used by anyone to find the picture of the soul
 ![alt text](Screen/14.png)
 ![alt text](Screen/15.png)
 ![alt text](Screen/16.png)
+![alt text](Screen/17.png)
+![alt text](Screen/18.png)
+![alt text](Screen/19.png)
+![alt text](Screen/20.png)
+![alt text](Screen/21.png)
 
 ## Presentation
 Link to the [Presentation](https://www.canva.com/design/DAFBA2wkHJ8/59VX9Nv_Goq_mDg5WTSOQg/view?utm_content=DAFBA2wkHJ8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton#1)
