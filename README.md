@@ -33,6 +33,21 @@ This site can be used by anyone to find the picture of the soul
 
 ## Screenshots
 ![alt text](Screen/1.png)
+![alt text](Screen/2.png)
+![alt text](Screen/3.png)
+![alt text](Screen/4.png)
+![alt text](Screen/5.png)
+![alt text](Screen/6.png)
+![alt text](Screen/7.png)
+![alt text](Screen/8.png)
+![alt text](Screen/9.png)
+![alt text](Screen/10.png)
+![alt text](Screen/11.png)
+![alt text](Screen/12.png)
+![alt text](Screen/13.png)
+![alt text](Screen/14.png)
+![alt text](Screen/15.png)
+![alt text](Screen/16.png)
 
 ## Presentation
 Link to the [Presentation](https://www.canva.com/design/DAFBA2wkHJ8/59VX9Nv_Goq_mDg5WTSOQg/view?utm_content=DAFBA2wkHJ8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton#1)
