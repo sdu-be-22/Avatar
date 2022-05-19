@@ -32,7 +32,7 @@ Art originates from distant times. With the help of peoples, real masterpieces w
 This site can be used by anyone to find the picture of the soul
 
 ## Screenshots
-![alt text]([http://url/to/img.png](https://github.com/sdu-be-22/Avatar/blob/master/Screen/1.png))
+![alt text](Avatar/Screen/1.png)
 
 ## Presentation
 Link to the [Presentation](https://www.canva.com/design/DAFBA2wkHJ8/59VX9Nv_Goq_mDg5WTSOQg/view?utm_content=DAFBA2wkHJ8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton#1)
